@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --brand: 79 70 229;
+    --brand: 21 128 61;
   }
 }
 
@@ -15,6 +15,10 @@
 }
 
 @media print {
+  @page {
+    margin: 0;
+  }
+
   .no-print {
     display: none !important;
   }

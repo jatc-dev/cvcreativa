@@ -11,9 +11,9 @@ export default function StepWizard({ activeStep, steps, onNext, onPrev, onStepCh
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all ${
                     isActive
-                      ? "bg-brand text-white shadow-brand"
+                      ? "bg-faca-700 text-white shadow-faca"
                       : isCompleted
-                      ? "bg-green-600 text-white"
+                      ? "bg-faca-700 text-white"
                       : "bg-slate-200 text-slate-500 border border-slate-300"
                   }`}
                 >
@@ -21,10 +21,10 @@ export default function StepWizard({ activeStep, steps, onNext, onPrev, onStepCh
                 </div>
                 {index < steps.length - 1 && (
                   <div className={`h-1 w-8 flex-shrink-0 ${
-                    isCompleted ? "bg-green-400" : "bg-slate-200"
+                    isCompleted ? "bg-faca-700" : "bg-slate-200"
                   }`} />
                 )}
-                <span className={`text-sm font-medium transition-colors ${isActive ? "text-brand-dark" : "text-slate-500"}`}>
+                <span className={`text-sm font-medium transition-colors ${isActive ? "text-faca-900" : "text-slate-500"}`}>
                   {step.label}
                 </span>
               </div>
@@ -32,7 +32,7 @@ export default function StepWizard({ activeStep, steps, onNext, onPrev, onStepCh
           })}
         </div>
         <div className="flex items-center gap-2 text-xs text-slate-400">
-          <span className="font-bold text-brand-dark">{activeStep + 1}</span>
+          <span className="font-bold text-faca-900">{activeStep + 1}</span>
           <span>/</span>
           <span>{steps.length}</span>
         </div>
@@ -49,7 +49,7 @@ export default function StepWizard({ activeStep, steps, onNext, onPrev, onStepCh
         <button
           onClick={onNext}
           disabled={!canNext(activeStep)}
-          className="px-6 py-2 text-sm font-medium text-white bg-brand-dark hover:bg-purple-700 rounded-lg shadow-brand disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="px-6 py-2 text-sm font-medium text-white bg-faca-900 hover:bg-faca-700 rounded-lg shadow-faca disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           {activeStep === steps.length - 1 ? "Finalizar y Previsualizar" : "Siguiente"}
         </button>

@@ -7,23 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        indigo: {
-          50: "#f0f4ff",
-          100: "#e0e7ff",
-          500: "#6366f1",
-          600: "#4f46e5",
-          700: "#4338ca",
-          900: "#312e81",
+        faca: {
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          500: "#22c55e",
+          600: "#16a34a",
+          700: "#15803d",
+          900: "#14532d",
         },
-        purple: {
-          500: "#a855f7",
-          600: "#9333ea",
-          700: "#7e22ce",
+        accent: {
+          DEFAULT: "#dc2626",
         },
         brand: {
-          DEFAULT: "#4f46e5",
-          dark: "#312e81",
-          light: "#e0e7ff",
+          DEFAULT: "#15803d",
+          dark: "#14532d",
+          light: "#f0fdf4",
         },
       },
       fontFamily: {
@@ -31,7 +29,8 @@ export default {
         heading: ["Inter", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        brand: "0 10px 15px -3px rgba(79, 70, 229, 0.2)",
+        faca: "0 10px 15px -3px rgba(21, 128, 61, 0.2)",
+        brand: "0 10px 15px -3px rgba(21, 128, 61, 0.2)",
       },
     },
   },

@@ -11,12 +11,12 @@ export default function CVPreview({ data }) {
   const { personal, experience, education, skills } = data;
 
   return (
-    <div className="cv-page max-w-[21cm] mx-auto bg-white p-8 text-slate-900 font-sans antialiased">
-      <header className="text-center mb-8 border-b-2 border-brand-dark pb-6">
-        <h1 className="font-heading font-bold text-4xl text-brand-dark tracking-tight">
+    <div className="cv-page max-w-[21cm] mx-auto bg-white p-8 print:p-8 print:max-w-full print:bg-white text-slate-900 font-sans antialiased">
+      <header className="text-center mb-8 border-b-2 border-faca-900 pb-6">
+        <h1 className="font-heading font-bold text-4xl text-faca-900 tracking-tight">
           {personal.fullName || "Nombre Apellido"}
         </h1>
-        <p className="mt-1.5 text-brand font-semibold text-lg uppercase tracking-wider">
+        <p className="mt-1.5 text-faca-700 font-semibold text-lg uppercase tracking-wider">
           {personal.headline || "Titular profesional"}
         </p>
         <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-slate-600">
@@ -54,19 +54,19 @@ export default function CVPreview({ data }) {
       </header>
 
       <section className="mb-8">
-        <h2 className="font-heading font-bold text-brand-dark mb-3 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
+        <h2 className="font-heading font-bold text-faca-900 mb-3 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
           Experiencia laboral
         </h2>
         <div className="space-y-6">
           {experience.length > 0 ? (
             experience.map((exp) => (
-              <div key={exp.id} className="space-y-2">
+              <div key={exp.id} className="space-y-2 print:break-inside-avoid">
                 <div className="flex items-baseline justify-between gap-2">
                   <div>
-                    <p className="font-bold text-brand-dark">{exp.role}</p>
+                    <p className="font-bold text-faca-900">{exp.role}</p>
                     <p className="text-sm text-slate-600">{exp.company}</p>
                   </div>
-                  <span className="text-xs font-medium text-brand bg-brand-light/50 px-2 py-0.5 rounded">
+                  <span className="text-xs font-medium text-faca-700 bg-faca-50/50 px-2 py-0.5 rounded">
                     {formatDate(exp.startDate)} – {exp.current ? "Presente" : formatDate(exp.endDate)}
                   </span>
                 </div>
@@ -90,17 +90,17 @@ export default function CVPreview({ data }) {
 
       {education.length > 0 && (
         <section className="mb-8">
-          <h2 className="font-heading font-bold text-brand-dark mb-3 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
-            Educación y certificaciones
-          </h2>
+        <h2 className="font-heading font-bold text-faca-900 mb-3 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
+          Educación y certificaciones
+        </h2>
           <div className="space-y-4">
             {education.map((edu) => (
-              <div key={edu.id} className="flex items-baseline justify-between gap-2">
+              <div key={edu.id} className="flex items-baseline justify-between gap-2 print:break-inside-avoid">
                 <div>
-                  <p className="font-bold text-brand-dark">{edu.degree}</p>
+                  <p className="font-bold text-faca-900">{edu.degree}</p>
                   <p className="text-sm text-slate-600">{edu.institution}</p>
                 </div>
-                <span className="text-xs font-medium text-brand-dark">{edu.year}</span>
+                <span className="text-xs font-medium text-faca-900">{edu.year}</span>
               </div>
             ))}
           </div>
@@ -108,25 +108,25 @@ export default function CVPreview({ data }) {
       )}
 
       <section>
-        <h2 className="font-heading font-bold text-brand-dark mb-4 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
+        <h2 className="font-heading font-bold text-faca-900 mb-4 border-b border-slate-200 pb-1 uppercase tracking-wider text-xs">
           Habilidades
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <h3 className="text-xs font-bold text-brand uppercase tracking-wider mb-2">Técnicas</h3>
+            <h3 className="text-xs font-bold text-faca-700 uppercase tracking-wider mb-2">Técnicas</h3>
             <div className="flex flex-wrap gap-2">
               {skills.technical.map((s) => (
-                <span key={s} className="px-3 py-1.5 rounded bg-brand-light text-brand text-xs font-medium border border-brand/20">
+                <span key={s} className="px-3 py-1.5 rounded bg-faca-50 text-faca-700 text-xs font-medium border border-faca-700/20">
                   {s}
                 </span>
               ))}
             </div>
           </div>
           <div>
-            <h3 className="text-xs font-bold text-brand uppercase tracking-wider mb-2">Blandas</h3>
+            <h3 className="text-xs font-bold text-faca-700 uppercase tracking-wider mb-2">Blandas</h3>
             <div className="flex flex-wrap gap-2">
               {skills.soft.map((s) => (
-                <span key={s} className="px-3 py-1.5 rounded bg-brand-light text-brand text-xs font-medium border border-brand/20">
+                <span key={s} className="px-3 py-1.5 rounded bg-faca-50 text-faca-700 text-xs font-medium border border-faca-700/20">
                   {s}
                 </span>
               ))}

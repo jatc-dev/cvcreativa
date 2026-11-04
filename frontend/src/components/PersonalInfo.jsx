@@ -6,7 +6,7 @@ export default function PersonalInfo({ data, onChange }) {
       key: "fullName",
       label: "Nombres y apellidos",
       type: "text",
-      placeholder: "Juan Pérez García",
+      placeholder: "Ej. Ana María Rojas",
       icon: "User",
       required: true,
     },
@@ -14,7 +14,7 @@ export default function PersonalInfo({ data, onChange }) {
       key: "headline",
       label: "Titular de impacto",
       type: "text",
-      placeholder: "Desarrollador Full Stack con 3+ años optimizando arquitecturas cloud",
+      placeholder: "Ej. Técnico en Logística",
       icon: "Briefcase",
       required: true,
     },
@@ -29,14 +29,14 @@ export default function PersonalInfo({ data, onChange }) {
       key: "phone",
       label: "Teléfono",
       type: "tel",
-      placeholder: "+57 300 123 4567",
+      placeholder: "Ej. 310 123 4567",
       icon: "Phone",
     },
     {
       key: "location",
       label: "Ubicación",
       type: "text",
-      placeholder: "Bogotá, Colombia",
+      placeholder: "Ej. Facatativá, Cundinamarca",
       icon: "MapPin",
     },
     {
@@ -57,26 +57,26 @@ export default function PersonalInfo({ data, onChange }) {
 
   return (
     <div className="space-y-5">
-      <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-brand" />
-        <h3 className="font-heading font-semibold text-brand-dark">Datos de contacto y titular</h3>
+        <div className="flex items-center gap-2">
+        <div className="w-2 h-2 rounded-full bg-faca-700" />
+        <h3 className="font-heading font-semibold text-faca-900">Datos de contacto y titular</h3>
       </div>
 
       <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {fields.slice(0, 2).map((field) => (
             <div key={field.key} className="space-y-1.5">
-              <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
-                <Icon name={field.icon} className="text-brand" size={0.5} />
+                <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <Icon name={field.icon} className="text-faca-700" size={0.5} />
                 {field.label}
-                {field.required && <span className="text-brand">*</span>}
+                {field.required && <span className="text-faca-700">*</span>}
               </label>
               <input
                 type={field.type}
                 value={data.personal[field.key] || ""}
                 onChange={(e) => onChange("personal", { ...data.personal, [field.key]: e.target.value })}
                 placeholder={field.placeholder}
-                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-faca-700 focus:border-transparent outline-none transition-all"
               />
             </div>
           ))}
@@ -86,7 +86,7 @@ export default function PersonalInfo({ data, onChange }) {
           {fields.slice(2).map((field) => (
             <div key={field.key} className="space-y-1.5">
               <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
-                <Icon name={field.icon} className="text-brand" size={0.5} />
+                <Icon name={field.icon} className="text-faca-700" size={0.5} />
                 {field.label}
               </label>
               <input
@@ -94,7 +94,7 @@ export default function PersonalInfo({ data, onChange }) {
                 value={data.personal[field.key] || ""}
                 onChange={(e) => onChange("personal", { ...data.personal, [field.key]: e.target.value })}
                 placeholder={field.placeholder}
-                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-faca-700 focus:border-transparent outline-none transition-all"
               />
             </div>
           ))}

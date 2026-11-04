@@ -72,14 +72,14 @@ export default function ExperienceSection({ data, onChange }) {
     return (
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-brand" />
-          <h3 className="font-heading font-semibold text-brand-dark">Experiencia laboral</h3>
+        <div className="w-2 h-2 rounded-full bg-faca-700" />
+        <h3 className="font-heading font-semibold text-faca-900">Experiencia laboral</h3>
         </div>
         <button
           onClick={addExperience}
-          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-brand-dark bg-brand-light border border-brand/20 rounded-lg hover:bg-brand/10 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-faca-900 bg-faca-50 border border-faca-700/20 rounded-lg hover:bg-faca-50/10 transition-colors"
         >
-          <Icon name="Plus" className="text-brand-dark" size={0.5} /> Añadir experiencia
+          <Icon name="Plus" className="text-faca-900" size={0.5} /> Añadir experiencia
         </button>
       </div>
     );
@@ -88,8 +88,8 @@ export default function ExperienceSection({ data, onChange }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-brand" />
-        <h3 className="font-heading font-semibold text-brand-dark">Experiencia laboral</h3>
+        <div className="w-2 h-2 rounded-full bg-faca-700" />
+        <h3 className="font-heading font-semibold text-faca-900">Experiencia laboral</h3>
       </div>
 
       {data.experience.map((exp) => (
@@ -100,7 +100,7 @@ export default function ExperienceSection({ data, onChange }) {
           <div className="flex items-center justify-between mb-3">
             <button
               onClick={() => removeExperience(exp.id)}
-              className="text-slate-400 hover:text-brand-dark transition-colors"
+              className="text-slate-400 hover:text-faca-900 transition-colors"
               aria-label="Eliminar experiencia"
             >
               <Icon name="Trash2" className="text-slate-400" size={0.5} />
@@ -113,8 +113,8 @@ export default function ExperienceSection({ data, onChange }) {
               <input
                 value={exp.company}
                 onChange={(e) => updateField(exp.id, "company", e.target.value)}
-                placeholder="Empresa"
-                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                placeholder="Ej. Cultivos de la Sabana"
+                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
               />
             </div>
             <div className="space-y-1.5">
@@ -122,8 +122,8 @@ export default function ExperienceSection({ data, onChange }) {
               <input
                 value={exp.role}
                 onChange={(e) => updateField(exp.id, "role", e.target.value)}
-                placeholder="Cargo"
-                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                placeholder="Ej. Asistente Administrativo"
+                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function ExperienceSection({ data, onChange }) {
                 value={exp.location}
                 onChange={(e) => updateField(exp.id, "location", e.target.value)}
                 placeholder="Ciudad"
-                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
               />
             </div>
             <div className="space-y-1.5">
@@ -144,7 +144,7 @@ export default function ExperienceSection({ data, onChange }) {
                 type="month"
                 value={exp.startDate}
                 onChange={(e) => updateField(exp.id, "startDate", e.target.value)}
-                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
               />
             </div>
             <div className="space-y-1.5">
@@ -153,7 +153,7 @@ export default function ExperienceSection({ data, onChange }) {
                   type="checkbox"
                   checked={exp.current}
                   onChange={() => toggleCurrent(exp.id)}
-                  className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand"
+                  className="w-4 h-4 rounded border-slate-300 text-faca-700 focus:ring-faca-700"
                 />
                 Trabajo actual
               </label>
@@ -166,7 +166,7 @@ export default function ExperienceSection({ data, onChange }) {
                   value={exp.endDate}
                   onChange={(e) => updateField(exp.id, "endDate", e.target.value)}
                   disabled={exp.current}
-                  className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                  className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
                 />
               </div>
             )}
@@ -174,7 +174,7 @@ export default function ExperienceSection({ data, onChange }) {
 
           <div className="space-y-1.5">
             <label className="flex items-center gap-2 text-xs font-medium text-slate-500 uppercase tracking-wider">
-              <Icon name="Briefcase" className="text-brand" size={0.375} /> Logros y responsabilidades
+              <Icon name="Briefcase" className="text-faca-700" size={0.375} /> Logros y responsabilidades
             </label>
             <div className="space-y-2">
               {exp.achievements.map((ach, i) => (
@@ -182,8 +182,8 @@ export default function ExperienceSection({ data, onChange }) {
                   <input
                     value={ach}
                     onChange={(e) => updateAchievement(exp.id, i, e.target.value)}
-                    placeholder="Ej: Reduje costos un 20% migrando a la nube"
-                    className="flex-1 rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-brand outline-none"
+                    placeholder="Ej. Optimicé los tiempos de entrega en un 15%..."
+                    className="flex-1 rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
                   />
                   {exp.achievements.length > 1 && (
                     <button
@@ -198,9 +198,9 @@ export default function ExperienceSection({ data, onChange }) {
               ))}
               <button
                 onClick={() => addAchievement(exp.id)}
-                className="text-xs font-medium text-brand-dark hover:text-brand transition-colors flex items-center gap-1"
+                className="text-xs font-medium text-faca-900 hover:text-faca-700 transition-colors flex items-center gap-1"
               >
-                <Icon name="Plus" className="text-brand-dark" size={0.375} /> Añadir logro
+                <Icon name="Plus" className="text-faca-900" size={0.375} /> Añadir logro
               </button>
             </div>
           </div>
@@ -209,9 +209,9 @@ export default function ExperienceSection({ data, onChange }) {
 
       <button
         onClick={addExperience}
-        className="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-brand-dark bg-brand-light border border-brand/20 rounded-lg hover:bg-brand/10 transition-colors"
+        className="w-full flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-faca-900 bg-faca-50 border border-faca-700/20 rounded-lg hover:bg-faca-50/10 transition-colors"
       >
-        <Icon name="Plus" className="text-brand-dark" size={0.5} /> Añadir otra experiencia
+        <Icon name="Plus" className="text-faca-900" size={0.5} /> Añadir otra experiencia
       </button>
     </div>
   );

@@ -58,17 +58,17 @@ export default function CVForm({ data, onChange }) {
   return (
     <div className="space-y-5">
       <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-brand" />
-        <h3 className="font-heading font-semibold text-brand-dark">Datos personales</h3>
+        <div className="w-2 h-2 rounded-full bg-faca-700" />
+        <h3 className="font-heading font-semibold text-faca-900">Datos personales</h3>
       </div>
 
       <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
         {fields.map((field) => (
           <div key={field.key} className="space-y-1.5">
             <label className="flex items-center gap-2 text-sm font-medium text-slate-700">
-              <field.icon className="w-4 h-4 text-brand" />
+              <field.icon className="w-4 h-4 text-faca-700" />
               {field.label}
-              {field.required && <span className="text-brand">*</span>}
+              {field.required && <span className="text-faca-700">*</span>}
             </label>
             {field.type === "textarea" ? (
               <textarea
@@ -76,7 +76,7 @@ export default function CVForm({ data, onChange }) {
                 onChange={(e) => onChange(field.key, e.target.value)}
                 rows={field.rows}
                 placeholder={field.placeholder}
-                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-faca-700 focus:border-transparent outline-none transition-all"
               />
             ) : (
               <input
@@ -84,7 +84,7 @@ export default function CVForm({ data, onChange }) {
                 value={data[field.key] || ""}
                 onChange={(e) => onChange(field.key, e.target.value)}
                 placeholder={field.placeholder}
-                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-brand focus:border-transparent outline-none transition-all"
+                className="w-full rounded-lg border border-slate-200 bg-slate-50/50 px-3 py-2 text-sm text-slate-900 focus:ring-2 focus:ring-faca-700 focus:border-transparent outline-none transition-all"
               />
             )}
           </div>
