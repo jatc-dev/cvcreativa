@@ -11,6 +11,8 @@ export default function ExperienceSection({ data, onChange }) {
       startDate: "",
       endDate: "",
       current: false,
+      bossName: "",
+      bossPhone: "",
       achievements: [""],
     };
     onChange("experience", [...data.experience, newEntry]);
@@ -72,8 +74,8 @@ export default function ExperienceSection({ data, onChange }) {
     return (
       <div className="space-y-4">
         <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-faca-700" />
-        <h3 className="font-heading font-semibold text-faca-900">Experiencia laboral</h3>
+          <div className="w-2 h-2 rounded-full bg-faca-700" />
+          <h3 className="font-heading font-semibold text-faca-900">Experiencia laboral</h3>
         </div>
         <button
           onClick={addExperience}
@@ -109,7 +111,7 @@ export default function ExperienceSection({ data, onChange }) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Empresa</label>
+              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Empresa / Entidad</label>
               <input
                 value={exp.company}
                 onChange={(e) => updateField(exp.id, "company", e.target.value)}
@@ -118,7 +120,7 @@ export default function ExperienceSection({ data, onChange }) {
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Cargo</label>
+              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Cargo desempeñado</label>
               <input
                 value={exp.role}
                 onChange={(e) => updateField(exp.id, "role", e.target.value)}
@@ -128,13 +130,22 @@ export default function ExperienceSection({ data, onChange }) {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-3">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-3">
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Ubicación</label>
+              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Jefe inmediato</label>
               <input
-                value={exp.location}
-                onChange={(e) => updateField(exp.id, "location", e.target.value)}
-                placeholder="Ciudad"
+                value={exp.bossName}
+                onChange={(e) => updateField(exp.id, "bossName", e.target.value)}
+                placeholder="Ej. Carlos Pérez"
+                className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Teléfono jefe</label>
+              <input
+                value={exp.bossPhone}
+                onChange={(e) => updateField(exp.id, "bossPhone", e.target.value)}
+                placeholder="Ej. 310 123 4567"
                 className="w-full rounded border border-slate-200 bg-slate-50 px-2.5 py-2 text-sm text-slate-900 focus:ring-1 focus:ring-faca-700 outline-none"
               />
             </div>
@@ -160,7 +171,7 @@ export default function ExperienceSection({ data, onChange }) {
             </div>
             {!exp.current && (
               <div className="space-y-1.5">
-                <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Fecha fin</label>
+                <label className="text-xs font-medium text-slate-500 uppercase tracking-wider">Fecha retiro</label>
                 <input
                   type="month"
                   value={exp.endDate}
@@ -174,7 +185,7 @@ export default function ExperienceSection({ data, onChange }) {
 
           <div className="space-y-1.5">
             <label className="flex items-center gap-2 text-xs font-medium text-slate-500 uppercase tracking-wider">
-              <Icon name="Briefcase" className="text-faca-700" size={0.375} /> Logros y responsabilidades
+              <Icon name="Briefcase" className="text-faca-700" size={0.375} /> Funciones o logros principales
             </label>
             <div className="space-y-2">
               {exp.achievements.map((ach, i) => (
@@ -189,7 +200,7 @@ export default function ExperienceSection({ data, onChange }) {
                     <button
                       onClick={() => removeAchievement(exp.id, i)}
                       className="text-slate-400 hover:text-red-500 transition-colors"
-                      aria-label="Eliminar logro"
+                      aria-label="Eliminar función"
                     >
                       <Icon name="Trash2" className="text-slate-400" size={0.375} />
                     </button>
@@ -200,7 +211,7 @@ export default function ExperienceSection({ data, onChange }) {
                 onClick={() => addAchievement(exp.id)}
                 className="text-xs font-medium text-faca-900 hover:text-faca-700 transition-colors flex items-center gap-1"
               >
-                <Icon name="Plus" className="text-faca-900" size={0.375} /> Añadir logro
+                <Icon name="Plus" className="text-faca-900" size={0.375} /> Añadir función
               </button>
             </div>
           </div>

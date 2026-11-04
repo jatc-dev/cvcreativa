@@ -10,7 +10,8 @@ export default function SkillsSection({ data, onChange }) {
     { id: "soft", label: "Blandas", icon: "Users" },
   ];
 
-  const addSkill = () => {
+  const addSkill = (e) => {
+    if (e) e.preventDefault();
     const trimmed = newSkill.trim();
     if (!trimmed) return;
     if (data.skills[category].includes(trimmed)) {
@@ -34,13 +35,13 @@ export default function SkillsSection({ data, onChange }) {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
-      addSkill();
+      addSkill(e);
     }
   };
 
   return (
     <div className="space-y-4">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2">
         <div className="w-2 h-2 rounded-full bg-faca-700" />
         <h3 className="font-heading font-semibold text-faca-900">Habilidades técnicas y blandas</h3>
       </div>
@@ -55,6 +56,7 @@ export default function SkillsSection({ data, onChange }) {
               </label>
               <button
                 onClick={() => setCategory(cat.id)}
+                type="button"
                 className={`px-2 py-1 rounded text-xs font-medium transition-colors ${
                   category === cat.id
                     ? "bg-faca-700 text-white"
@@ -74,6 +76,7 @@ export default function SkillsSection({ data, onChange }) {
               />
               <button
                 onClick={addSkill}
+                type="button"
                 disabled={!newSkill.trim() || category !== cat.id}
                 className="px-3 py-2 rounded bg-faca-900 text-white text-sm font-medium hover:bg-faca-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
@@ -85,6 +88,7 @@ export default function SkillsSection({ data, onChange }) {
                 <button
                   key={skill}
                   onClick={() => removeSkill(cat.id, skill)}
+                  type="button"
                   className="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200 hover:bg-faca-700 hover:text-white hover:border-faca-700 transition-colors"
                 >
                   {skill}
